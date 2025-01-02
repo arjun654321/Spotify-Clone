@@ -15,7 +15,7 @@ async function loadSongs(folder) {
     currFolder = folder;
     console.log(`Loading songs from folder: ${folder}`);
     try {
-        const response = await fetch(`songs2/${folder}/`);
+        const response = await fetch(`/songs2/${folder}/`);
         if (!response.ok) throw new Error(`Failed to load folder: ${folder}`);
 
         const text = await response.text();
