@@ -159,7 +159,7 @@ function initializePlaybarControls() {
 
 function playMusic(song) {
     console.log(`Playing song: ${song}`);
-    currentSong.src = `songs2/${currFolder}/${song}`;
+    currentSong.src = `/songs2/${currFolder}/${song}`;
     currentSong.play();
     document.querySelector("#play").src = "img/pause.svg";
     document.querySelector(".songinfo").textContent = song;
