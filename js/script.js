@@ -158,12 +158,14 @@ function initializePlaybarControls() {
 
 
 function playMusic(song) {
-    console.log(`Playing song: ${song}`);
-    currentSong.src = `/songs2/${currFolder}/${song}`;
+    const songPath = `/songs2/${currFolder}/${song}`;
+    console.log("Song Path: ", songPath);  // Add this log to inspect the generated path
+    currentSong.src = songPath;
     currentSong.play();
     document.querySelector("#play").src = "img/pause.svg";
     document.querySelector(".songinfo").textContent = song;
 }
+
 
 document.querySelectorAll(".card").forEach((card) => {
     card.addEventListener("click", () => {
