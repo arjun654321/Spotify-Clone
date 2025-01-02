@@ -15,7 +15,7 @@ async function loadSongs(folder) {
     currFolder = folder;
     console.log(`Loading songs from folder: ${folder}`);
     try {
-        const response = await fetch(`/songs2/${folder}/`);
+        const response = await fetch(`public/songs2/${folder}/`);
         if (!response.ok) throw new Error(`Failed to load folder: ${folder}`);
 
         const text = await response.text();
@@ -158,7 +158,7 @@ function initializePlaybarControls() {
 
 
 function playMusic(song) {
-    const songPath = `/songs2/${currFolder}/${song}`;
+    const songPath = `public/songs2/${currFolder}/${song}`;
     console.log("Song Path: ", songPath);  // Add this log to inspect the generated path
     currentSong.src = songPath;
     currentSong.play();
